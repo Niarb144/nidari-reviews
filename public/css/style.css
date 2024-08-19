@@ -72,10 +72,22 @@
 
 .review .rating{
     background: yellow;
+    display: flex;
+    align-items: center;
+}
+
+.review .rating p{
+    margin-left: 2rem;
 }
 
 .review .date{
     background: lime;
+    display: flex;
+    align-items: center;
+}
+
+.review .date p{
+    margin-left: 2rem;
 }
 
 .review .description{
