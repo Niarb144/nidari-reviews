@@ -1,0 +1,86 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.review-container{
+    width: 100%;
+    background: aliceblue;
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.review{
+    width: 80%;
+    margin: auto;
+    padding: 1rem;
+    background: white;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.review .book-cover{
+    height: auto;
+    grid-row: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: greenyellow;
+    border-radius: 1rem 0 0 0;
+}
+
+.review .book-cover img{
+    width: 80%;
+    height: auto;
+}
+
+.review .title{
+    grid-column: span 2;
+    border-radius: 0 1rem 0 0;
+    background: blue;
+    display: flex;
+    align-items: center;
+}
+
+.review .title h2{
+    margin-left: 2rem;
+}
+
+.review .author{
+    background: red;
+    display: flex;
+    align-items: center;
+}
+
+.review .author p{
+    margin-left: 2rem;
+}
+
+.review .genre{
+    background: lightcoral;
+    display: flex;
+    align-items: center;
+}
+
+.review .genre p{
+    margin-left: 2rem;
+}
+
+.review .rating{
+    background: yellow;
+}
+
+.review .date{
+    background: lime;
+}
+
+.review .description{
+    grid-column: span 3;
+    background: yellow;
+    border-radius: 0 0 1rem 1rem;
+    padding: 1rem;
+}
