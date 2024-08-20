@@ -1,55 +1,27 @@
 <section class="review-container">
-    <div class="review">
-        <div class="book-cover">
-            <img src="img/logo-color.png" alt="">
+    <% for (let review of reviews){%>
+        <div class="review">
+            <div class="book-cover">
+                <img src="<%=review.cover%>" alt="">
+            </div>
+            <div class="title">
+                <h2><%=review.title%></h2>
+            </div>
+            <div class="author">
+                <p>Author: <%=review.author%></p>
+            </div>
+            <div class="genre">
+                <p>Genre: <%=review.genre%></p>
+            </div>
+            <div class="rating">
+                <p>Rating: <%=review.rating%></p>
+            </div>
+            <div class="date">
+                <p>Date Read: <%=review.date_read%></p>
+            </div>
+            <div class="description">
+                <p><%=review.content%></p>
+            </div>
         </div>
-        <div class="title">
-            <h2>Title</h2>
-        </div>
-        <div class="author">
-            <p>Author: </p>
-        </div>
-        <div class="genre">
-            <p>Genre:</p>
-        </div>
-        <div class="rating">
-            <p>Rating:</p>
-        </div>
-        <div class="date">
-            <p>Date:</p>
-        </div>
-        <div class="description">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                 Rerum inventore sint ea vel doloremque. Veniam pariatur
-                  explicabo accusantium reprehenderit itaque.
-            </p>
-        </div>
-    </div>
-
-    <div class="review">
-        <div class="book-cover">
-            <img src="img/logo-color.png" alt="">
-        </div>
-        <div class="title">
-            <h2>Title</h2>
-        </div>
-        <div class="author">
-            <p>Author: </p>
-        </div>
-        <div class="genre">
-            <p>Genre:</p>
-        </div>
-        <div class="rating">
-            <p>Rating:</p>
-        </div>
-        <div class="date">
-            <p>Date:</p>
-        </div>
-        <div class="description">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                 Rerum inventore sint ea vel doloremque. Veniam pariatur
-                  explicabo accusantium reprehenderit itaque.
-            </p>
-        </div>
-    </div>
+    <%}%> 
 </section>
