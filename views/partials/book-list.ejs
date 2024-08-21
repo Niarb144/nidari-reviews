@@ -1,0 +1,39 @@
+<div class="table-container">
+    
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>Cover</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Genre</th>
+                <th>Date Read</th>
+                <th>Options</th>
+            </tr>
+        </thead>
+        <%for (let review of reviews){%>
+        
+            <tbody>
+                <tr>
+                    <td>Image</td>
+                    <td><%=review.title%></td>
+                    <td><%=review.author%></td>
+                    <td><%=review.genre%></td>
+                    <td><%=review.date_read%></td>
+                    <td><ul>
+                        <li><a href="/view">View</a></li>
+                        <li><a href="/edit">Edit</a></li>
+                        <li><a href="/delete">Delete</a></li>
+                    </ul></td>
+                </tr>
+                <!-- <tr class="active-row">
+                    <td>Row 2, Cell 1</td>
+                    <td>Row 2, Cell 2</td>
+                    <td>Row 2, Cell 3</td>
+                    <td>Row 2, Cell 4</td>
+                </tr> -->
+            </tbody>
+            <%}%>
+        </table>
+   
+</div>

@@ -20,14 +20,14 @@ let reviews = [];
 
 async function checkReviews(){
     const result = await db.query (
-      "SELECT * FROM reads"
+      "SELECT * FROM reads ORDER BY title"
     );
     reviews = result.rows;
     return reviews;
   }
 
 app.get("/", async(req, res) => {
-    const tasks = await checkReviews();
+    const reviews = await checkReviews();
     res.render("index.ejs", {
     reviews: reviews,
   });
@@ -36,6 +36,13 @@ app.get("/", async(req, res) => {
 app.get("/admin", (req, res) => {
     res.render("admin.ejs");
 });
+
+app.get("/list", async(req, res) => {
+    const reviews = await checkReviews();
+    res.render("list.ejs", {
+        reviews: reviews
+    });
+})
 
 app.post("/add",async (req, res) => {
     const title = req.body.title;
@@ -51,10 +58,6 @@ app.post("/add",async (req, res) => {
     );
     res.redirect("/");
   });
-
-app.get("/", async (req,res) => {
-
-});
 
 app.listen(port, (req, res) => {
     console.log(`Server running on port:${port}. Happy coding`);
