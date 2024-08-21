@@ -1,0 +1,12 @@
+Create database nidari
+
+SQL Code to make table
+CREATE TABLE reads(
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  author VARCHAR(255) NOT NULL,
+  genre VARCHAR(50) NOT NULL,
+  rating INT NOT NULL,
+  date_read DATE NOT NULL,
+  content VARCHAR
+);
