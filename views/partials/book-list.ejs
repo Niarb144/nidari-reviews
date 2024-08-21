@@ -15,7 +15,7 @@
         
             <tbody>
                 <tr>
-                    <td>Image</td>
+                    <td class="book-thumbnail"><img src="<%=review.cover%>" alt="<%=review.title%>-cover"></td>
                     <td><%=review.title%></td>
                     <td><%=review.author%></td>
                     <td><%=review.genre%></td>
@@ -23,7 +23,9 @@
                     <td><ul>
                         <li><a href="/view">View</a></li>
                         <li><a href="/edit">Edit</a></li>
-                        <li><a href="/delete">Delete</a></li>
+                        <li><form action="/delete" method="post">
+                            <input type="checkbox" onchange="this.form.submit()" name="deleteReviewId" value="<%= review.id %>">
+                          </form></li>
                     </ul></td>
                 </tr>
                 <!-- <tr class="active-row">

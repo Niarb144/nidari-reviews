@@ -57,6 +57,20 @@ app.post("/add",async (req, res) => {
       "INSERT INTO reads (title, author, date_read, cover, content, rating, genre) VALUES ($1, $2, $3, $4, $5, $6, $7)", [title, author, date, cover, content, rating, genre]
     );
     res.redirect("/");
+});
+
+app.post("/delete",async (req, res) => {
+    const reviewId = req.body.deleteReviewId;
+  
+    try {
+      await db.query(
+        "DELETE FROM reads WHERE id = $1",
+        [reviewId]
+      );
+      res.redirect("/");
+    } catch (err) {
+      console.log(err);
+    }
   });
 
 app.listen(port, (req, res) => {
