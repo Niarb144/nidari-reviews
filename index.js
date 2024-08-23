@@ -17,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 let reviews = [];
+let review = [];
 
 async function checkReviews(){
     const result = await db.query (
@@ -25,6 +26,13 @@ async function checkReviews(){
     reviews = result.rows;
     return reviews;
   }
+
+//   async function checkReview(){
+//     let reviewId = req.body.reviewId;
+//     const result = await db.query(
+//         "SELECT * FROM reads WHERE id = $1" , [reviewId]
+//     );
+//   }
 
 app.get("/", async(req, res) => {
     const reviews = await checkReviews();
@@ -42,7 +50,19 @@ app.get("/list", async(req, res) => {
     res.render("list.ejs", {
         reviews: reviews
     });
-})
+});
+
+app.get("/view", async(req, res) => {
+    const reviewId = req.body.viewReviewId;
+    const result = await db.query(
+        "SELECT * FROM reads WHERE id = $1", [reviewId] 
+    );
+    review = result.rows;
+    console.log(reviewId);
+    res.render("review.ejs", {
+        review:review
+    });
+});
 
 app.post("/add",async (req, res) => {
     const title = req.body.title;
@@ -61,7 +81,7 @@ app.post("/add",async (req, res) => {
 
 app.post("/delete",async (req, res) => {
     const reviewId = req.body.deleteReviewId;
-  
+    console.log(reviewId);
     try {
       await db.query(
         "DELETE FROM reads WHERE id = $1",

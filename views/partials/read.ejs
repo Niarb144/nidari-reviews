@@ -1,0 +1,28 @@
+<section class="review-container">
+    <% for (let read of review){%>
+        <div class="review">
+            <div class="book-cover">
+                <img src="<%=read.cover%>" alt="">
+            </div>
+            <div class="title">
+                <h2><%=read.title%></h2>
+            </div>
+            <div class="author">
+                <p>Author: <%=read.author%></p>
+            </div>
+            <div class="genre">
+                <p>Genre: <%=read.genre%></p>
+            </div>
+            <div class="rating">
+                <p>Rating: <%=read.rating%></p>
+            </div>
+            <div class="date">
+                <p>Date Read: <%=read.date_read%></p>
+            </div>
+            <div class="description">
+                <p><%=read.content%></p>
+            </div>
+        </div>
+    <%}%> 
+
+</section>
