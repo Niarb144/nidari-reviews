@@ -21,7 +21,7 @@ let review = [];
 
 async function checkReviews(){
     const result = await db.query (
-      "SELECT * FROM reads ORDER BY title"
+      "SELECT *,TO_CHAR(date_read, 'DD-MM-YYYY') as formatted_date FROM reads ORDER BY title"
     );
     reviews = result.rows;
     return reviews;
