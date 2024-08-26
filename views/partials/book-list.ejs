@@ -21,9 +21,9 @@
                     <td><%=review.genre%></td>
                     <td><%=review.date_read%></td>
                     <td><ul>
-                        <li><a href="/view">View</a></li>
-                        <li><form action="/view" method="get">
-                            <input type="submit" name="viewReviewId" value="<%=review.id%>">
+                        <li><a href="/view/<%=review.id%>" name = "viewReviewId">View</a></li>
+                        <!-- <li><form action="/view" method="get">
+                            <input type="submit" name="viewReviewId" value="<%=review.id%>"> -->
                             
                         </form></li>
                         <li><a href="/edit">Edit</a></li>
