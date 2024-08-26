@@ -76,18 +76,18 @@ app.post("/add",async (req, res) => {
     const result = await db.query (
       "INSERT INTO reads (title, author, date_read, cover, content, rating, genre) VALUES ($1, $2, $3, $4, $5, $6, $7)", [title, author, date, cover, content, rating, genre]
     );
-    res.redirect("/");
+    res.redirect("/admin");
 });
 
-app.post("/delete",async (req, res) => {
-    const reviewId = req.body.deleteReviewId;
+app.get("/delete/:id",async (req, res) => {
+    const reviewId = req.params.id;
     console.log(reviewId);
     try {
       await db.query(
         "DELETE FROM reads WHERE id = $1",
         [reviewId]
       );
-      res.redirect("/");
+      res.redirect("/list");
     } catch (err) {
       console.log(err);
     }

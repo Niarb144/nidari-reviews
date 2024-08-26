@@ -27,11 +27,11 @@
                             
                         </form></li>
                         <li><a href="/edit">Edit</a></li>
-                        <li>
-                            <form action="/delete" method="post">
+                        <li><a href="/delete/<%=review.id%>" name="deleteReviewId">Delete</a></li>
+                            <!-- <form action="/delete" method="post">
                                 <input type="checkbox" onchange="this.form.submit()" name="deleteReviewId" value="<%= review.id %>">
                             </form>
-                        </li>
+                        </li> -->
                     </ul></td>
                 </tr>
                 <!-- <tr class="active-row">
