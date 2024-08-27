@@ -64,6 +64,17 @@ app.get("/view/:id", async(req, res) => {
     });
 });
 
+app.get("/edit/:id", async(req, res) => {
+  const reviewId = req.params.id;
+  const result = await db.query(
+    "SELECT * FROM reads WHERE id = $1" , [reviewId]
+  );
+  review = result.rows;
+  res.render("edit.ejs", {
+    review: review
+  });
+});
+
 app.post("/add",async (req, res) => {
     const title = req.body.title;
     const author = req.body.author;
