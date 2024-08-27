@@ -1,14 +1,48 @@
+<style>
+    .review-container{
+        width: 100%;
+        height: auto;
+        background: lightgray;
+        padding: 1rem;
+    }
+
+    .review{
+        width: 80%;
+        margin: auto;
+    }
+
+    .book-cover{
+        width: 30%;
+        height: auto;
+    }
+
+    .book-cover img{
+        width: 100%;
+        height: auto;
+    }
+
+    .title{
+        display: flex;
+        gap: 1rem;
+    }
+
+    .author p span{
+        font-weight: bold;
+        font-weight: 500;
+    }
+</style>
+
 <section class="review-container">
     <% for (let read of review){%>
         <div class="review">
-            <div class="book-cover">
-                <img src="<%=read.cover%>" alt="">
-            </div>
             <div class="title">
-                <h2><%=read.title%></h2>
+                <h1><%=read.title%></h1>
             </div>
             <div class="author">
-                <p>Author: <%=read.author%></p>
+                <p><span>by</span> <%=read.author%></p>
+            </div>
+            <div class="book-cover">
+                <img src="<%=read.cover%>" alt="">
             </div>
             <div class="genre">
                 <p>Genre: <%=read.genre%></p>
