@@ -90,6 +90,21 @@ app.post("/add",async (req, res) => {
     res.redirect("/admin");
 });
 
+app.post("/editRead/:id", async(req, res) => {
+    const editId = req.params.id;
+    const title = req.body.editTitle;
+    const author = req.body.editAuthor;
+    const genre = req.body.editGenre;
+    const cover = req.body.editImage;
+    const content = req.body.content;
+    const rating = req.body.editRating;
+    
+    const result = await db.query (
+      "UPDATE reads SET title = $1, author = $2, cover = $3, content = $4, rating = $5, genre = $6 WHERE id = $7" , [title, author, cover, content, rating, genre, editId]
+    );
+    res.redirect("/list");
+});
+
 app.get("/delete/:id",async (req, res) => {
     const reviewId = req.params.id;
     console.log(reviewId);

@@ -19,13 +19,13 @@
 <section class="editRead">
     <%for (let read of review){%>
     <div class="reads-form">
-        <form action="/editRead" method="post">
-            <input type="text" name="image" id="image" placeholder="Image Link" value="<%=read.cover%>">
-            <input type="text" name="title" id="title" placeholder="Title" value="<%=read.title%>">
-            <input type="text" name="author" id="author" placeholder="Author" value="<%=read.author%>">
-            <input type="text" name="genre" id="genre" placeholder="Genre" value="<%=read.genre%>">
+        <form action="/editRead/<%=read.id%>" method="post">
+            <input type="text" name="editImage" id="image" placeholder="Image Link" value="<%=read.cover%>">
+            <input type="text" name="editTitle" id="title" placeholder="Title" value="<%=read.title%>">
+            <input type="text" name="editAuthor" id="author" placeholder="Author" value="<%=read.author%>">
+            <input type="text" name="editGenre" id="genre" placeholder="Genre" value="<%=read.genre%>">
             <!-- <input type="date" name="date" id="date" value="<%=read.date_read%>"> -->
-            <input type="number" name="rating" id="rating" placeholder="Rating 1-10" value="<%=read.rating%>">
+            <input type="number" name="editRating" id="rating" placeholder="Rating 1-10" value="<%=read.rating%>">
             <textarea name="content" id="content"><%=read.content%></textarea>
             <button type="submit" value="Submit">Submit</button>
         </form>
