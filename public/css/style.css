@@ -125,6 +125,30 @@
 }
 
 /* List Table */
+.link{
+    width: 800px;
+    margin: auto;
+    padding-top: 1rem;
+}
+
+.link a{
+    color: rgba(0, 0, 0);
+}
+
+.link a:hover{
+    color: #009879;
+    transition: all ease .4s;
+}
+
+ul{
+    list-style: none;
+}
+
+ul li a:hover{
+    text-decoration: underline;
+    transition: ease all .4s;
+}
+
 .table-container {
     max-width: 800px;
     margin: auto;

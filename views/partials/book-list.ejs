@@ -1,3 +1,7 @@
+<div class="link">
+    <a href="/admin">Add Review</a>
+</div>
+
 <div class="table-container">
     
     <table class="styled-table">
@@ -21,17 +25,9 @@
                     <td><%=review.genre%></td>
                     <td><%=review.formatted_date%></td>
                     <td><ul>
-                        <li><a href="/view/<%=review.id%>" name = "viewReviewId">View</a></li>
-                        <!-- <li><form action="/view" method="get">
-                            <input type="submit" name="viewReviewId" value="<%=review.id%>"> -->
-                            
-                        </form></li>
-                        <li><a href="/edit/<%=review.id%>" name="editReviewId">Edit</a></li>
-                        <li><a href="/delete/<%=review.id%>" name="deleteReviewId">Delete</a></li>
-                            <!-- <form action="/delete" method="post">
-                                <input type="checkbox" onchange="this.form.submit()" name="deleteReviewId" value="<%= review.id %>">
-                            </form>
-                        </li> -->
+                        <li><a href="/view/<%=review.id%>" name = "viewReviewId" id="viewReviewId">View</a></li>                            
+                        <li><a href="/edit/<%=review.id%>" name="editReviewId" id="editReviewId">Edit</a></li>
+                        <li><a href="/delete/<%=review.id%>" name="deleteReviewId" id="deleteReviewId">Delete</a></li>
                     </ul></td>
                 </tr>
                 <!-- <tr class="active-row">
