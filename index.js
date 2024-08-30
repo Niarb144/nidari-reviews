@@ -1,9 +1,12 @@
 import express from "express";
 import bodyParser from "body-parser";
 import pg from "pg";
+import axios from "axios";
 
 const app = express();
 const port =3000;
+const API_SEARCH_URL = "https://openlibrary.org/search.json";
+const API_COVER_URL = "https://covers.openlibrary.org/b/id/";
 const db = new pg.Client({
   user: 'postgres',
   host: 'localhost',

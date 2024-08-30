@@ -2,7 +2,9 @@
     <div class="reads-form">
         <form action="/add" method="post">
             <input type="text" name="image" id="image" placeholder="Image Link">
-            <input type="text" name="title" id="title" placeholder="Title">
+            <form action="/search" method="get">
+                <input type="text" name="title" id="title" placeholder="Title">
+            </form>
             <input type="text" name="author" id="author" placeholder="Author">
             <input type="text" name="genre" id="genre" placeholder="Genre">
             <input type="date" name="date" id="date">
