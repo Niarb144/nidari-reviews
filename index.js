@@ -21,6 +21,7 @@ app.use(express.static("public"));
 
 let reviews = [];
 let review = [];
+let books = [];
 
 async function checkReviews(){
     const result = await db.query (
@@ -108,7 +109,7 @@ app.post("/editRead/:id", async(req, res) => {
     res.redirect("/list");
 });
 
-app.get("/search", async (req, res) => {
+app.post("/search", async (req, res) => {
   let bookTitle = req.body.title;
 
   try{
@@ -117,7 +118,8 @@ app.get("/search", async (req, res) => {
     const book = JSON.parse(bookData);
 
     const bookDetails = book.results;
-    console.log(bookDetails);
+    console.log(book);
+    res.render("addRead.ejs", {books: book});
   }
   catch(error){
     console.log(`Book not found`);

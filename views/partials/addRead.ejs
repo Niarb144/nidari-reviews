@@ -2,10 +2,24 @@
     <div class="reads-form">
         <form action="/add" method="post">
             <input type="text" name="image" id="image" placeholder="Image Link">
-            <form action="/search" method="get">
-                <input type="text" name="title" id="title" placeholder="Title">
-                <button type="submit">Search</button>
-            </form>
+            
+            <input type="text" name="title" id="title" placeholder="Title">
+            <button type="submit" formaction="/search">Search</button>
+            
+            <!-- <div class="input-group rounded">
+                <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                <span class="input-group-text border-0" id="search-addon">
+                  <i class="fas fa-search"></i>
+                </span>
+              </div> -->
+            <% if (locals.books) {%>
+                <%for (let book of books){%>
+                    <ul>
+                        <li><%=book.book%></li>
+                    </ul>
+                <%}%>
+            <%}%>
+            
             <input type="text" name="author" id="author" placeholder="Author">
             <input type="text" name="genre" id="genre" placeholder="Genre">
             <input type="date" name="date" id="date">
