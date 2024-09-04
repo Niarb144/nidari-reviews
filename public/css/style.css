@@ -5,7 +5,9 @@
 
 .review-container{
     width: 100%;
-    background: aliceblue;
+    background-image: url("/img/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     height: auto;
     padding-top: 2rem;
     padding-bottom: 2rem;

@@ -115,7 +115,7 @@ app.post("/search", async (req, res) => {
   try{
     const response = await axios.get(API_SEARCH_URL + "?q=" + bookTitle);
     const bookData = JSON.stringify(response.data);
-    const book = JSON.parse(bookData);
+    const book = bookData.docs;
 
     const bookDetails = book.results;
     console.log(book);
