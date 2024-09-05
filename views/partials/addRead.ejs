@@ -1,10 +1,10 @@
 <section class="addRead">
     <div class="reads-form">
         <form action="/add" method="post">
-            <input type="text" name="image" id="image" placeholder="Image Link">
+            <input type="text" name="image" id="image" placeholder="Image Link" required>
             
-            <input type="text" name="title" id="title" placeholder="Title">
-            <button type="submit" formaction="/search">Search</button>
+            <input type="text" name="title" id="title" placeholder="Title" required>
+            <!-- <button type="submit" formaction="/search">Search</button> -->
             
             <!-- <div class="input-group rounded">
                 <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
@@ -14,11 +14,11 @@
               </div> -->
            
             
-            <input type="text" name="author" id="author" placeholder="Author">
-            <input type="text" name="genre" id="genre" placeholder="Genre">
-            <input type="date" name="date" id="date">
-            <input type="number" name="rating" id="rating" placeholder="Rating 1-10">
-            <textarea name="content" id="content"></textarea>
+            <input type="text" name="author" id="author" placeholder="Author" required>
+            <input type="text" name="genre" id="genre" placeholder="Genre" required>
+            <input type="date" name="date" id="date" required>
+            <input type="number" name="rating" id="rating" placeholder="Rating 1-10" required>
+            <textarea name="content" id="content" required></textarea>
             <button type="submit" value="Submit">Submit</button>
         </form>
         <a href="/list">View All</a>

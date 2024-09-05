@@ -109,23 +109,23 @@ app.post("/editRead/:id", async(req, res) => {
     res.redirect("/list");
 });
 
-app.post("/search", async (req, res) => {
-  let bookTitle = req.body.title;
+// app.post("/search", async (req, res) => {
+//   let bookTitle = req.body.title;
 
-  try{
-    const response = await axios.get(API_SEARCH_URL + "?q=" + bookTitle);
-    const bookData = JSON.stringify(response.data);
-    const book = bookData.docs;
+//   try{
+//     const response = await axios.get(API_SEARCH_URL + "?q=" + bookTitle);
+//     const bookData = JSON.stringify(response.data);
+//     const book = bookData.docs;
 
-    const bookDetails = book.results;
-    console.log(book);
-    res.render("addRead.ejs", {books: book});
-  }
-  catch(error){
-    console.log(`Book not found`);
-    res.render("addRead.ejs");
-  }
-})
+//     const bookDetails = book.results;
+//     console.log(book);
+//     res.render("addRead.ejs", {books: book});
+//   }
+//   catch(error){
+//     console.log(`Book not found`);
+//     res.render("addRead.ejs");
+//   }
+// });
 
 app.get("/delete/:id",async (req, res) => {
     const reviewId = req.params.id;
